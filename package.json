@@ -10,13 +10,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashanksakkurthi/frontend-cli.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "inquirer": "^9.1.2"
+  "bugs": {
+    "url": "https://github.com/sashanksakkurthi/frontend-cli/issues"
   },
-  "devDependencies": {
-    "@babel/core": "^7.19.3"
+  "homepage": "https://github.com/sashanksakkurthi/frontend-cli#readme",
+  "dependencies": {
+    "inquirer": "^9.1.3"
   }
 }
