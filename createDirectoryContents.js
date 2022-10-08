@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from "fs";
 const CURR_DIR = process.cwd();
 
 const createDirectoryContents = (templatePath, newProjectPath) => {
@@ -11,18 +11,21 @@ const createDirectoryContents = (templatePath, newProjectPath) => {
     const stats = fs.statSync(origFilePath);
 
     if (stats.isFile()) {
-      const contents = fs.readFileSync(origFilePath, 'utf8');
+      const contents = fs.readFileSync(origFilePath, "utf8");
 
       // Rename
-      if (file === '.npmignore') file = '.gitignore';
+      if (file === ".npmignore") file = ".gitignore";
 
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
-      fs.writeFileSync(writePath, contents, 'utf8');
+      fs.writeFileSync(writePath, contents, "utf8");
     } else if (stats.isDirectory()) {
       fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
 
       // recursive call
-      createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
+      createDirectoryContents(
+        `${templatePath}/${file}`,
+        `${newProjectPath}/${file}`
+      );
     }
   });
 };
